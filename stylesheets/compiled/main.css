@@ -15,4 +15,17 @@ img {
   object-fit: fill;
 }
 
+.c-pointer {
+  cursor: pointer;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+.contentWrapper.filterActive {
+  filter: brightness(60%);
+}
+
 /*# sourceMappingURL=main.css.map */

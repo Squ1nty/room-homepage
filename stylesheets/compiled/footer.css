@@ -15,9 +15,22 @@ img {
   object-fit: fill;
 }
 
+.c-pointer {
+  cursor: pointer;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+.contentWrapper.filterActive {
+  filter: brightness(60%);
+}
+
 .attribution {
   font-size: 1rem;
-  padding: 1em;
+  padding: 7.5vw;
   text-align: center;
 }
 

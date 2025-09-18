@@ -1,0 +1,19 @@
+@use 'main';
+
+nav.mobileNav.active{
+  max-height: 500px;
+}
+nav.mobileNav li:hover{
+  color: main.$grey-500;
+}
+
+nav.desktopNav li:hover:before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 500%);
+  height: 1px;
+  width: 40%;
+  border-bottom: 1px solid main.$white;
+}

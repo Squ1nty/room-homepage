@@ -1,0 +1,90 @@
+@use 'main';
+
+// Basic conditional styling based on screen width
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-height: 500px;
+
+  background-color: red;
+
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+}
+header.mobileHeader{
+  grid-template-columns: min-content 1fr;
+  padding: main.$p-3 main.$p-1;
+}
+header.desktopHeader{
+  grid-template-columns: min-content 1fr;
+  padding: main.$p-3 0;
+}
+nav.mobileNav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-height: 0;
+
+  display: grid;
+  grid-template-columns: min-content 75px;
+  align-items: center;
+  gap: main.$m-2;
+
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  background-color: white;
+}
+nav.desktopNav{
+  display: block;
+}
+
+// General Styles for Header
+nav ul{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: main.$m-2;
+  font-weight: 500;
+}
+nav li{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+// More specific styling related to mobile components
+.header__logoIconContainer{
+  display: flex;
+  justify-content: center;
+  transform: translateX(-1%);
+}
+nav.mobileNav li{
+  font-size: min(4.25vw, 1rem);
+  transition: color 0.15s ease;
+}
+nav.mobileNav ul, .header__closingIconContainer{
+  margin: main.$p-3 0;
+  margin-left: main.$p-1;
+}
+header.mobileHeader .header__logoIcon{
+  width: 75px;
+}
+header.desktopHeader .header__logoIcon{
+  width: 100px;
+}
+
+// More specific styling related to desktop components
+.desktopHeader .header__logoIconContainer{
+  margin: 0 main.$m-3;
+}
+nav.desktopNav li{
+  color: main.$white;
+  font-size: min(1.25rem, 1.5vw);
+  position: relative;
+}

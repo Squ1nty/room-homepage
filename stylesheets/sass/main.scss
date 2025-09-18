@@ -17,7 +17,7 @@ img{
 }
 
 // Variables
-$white: hssl(0, 100%, 100%);
+$white: hsl(0, 100%, 100%);
 $grey-500: hsl(0, 0%, 63%);
 $grey-800: hsl(0, 0%, 27%);
 $black: hsl(0, 0%, 0%);
@@ -26,16 +26,32 @@ $fs-1: 1rem;
 $fs-2: 1.5rem;
 $fs-3: 2rem;
 
-$fw-1: 500;
-$fw-2: 600;
-$fw-3: 700;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
 
-$p-1: 1em;
-$p-2: 1.25em;
-$p-3: 1.5em;
+$p-1: 7.5vw;
+$p-2: 2.25em;
+$p-3: 3em;
 
 $m-1: 1em;
-$m-2: 1.25em;
-$m-3: 1.5em;
+$m-2: min(8vw, 2.5rem);
+$m-3: 4em;
 
 // Compositions
+
+// Utilities
+.c-pointer{
+  cursor: pointer;
+}
+
+//Blocks
+body{
+  position: relative;
+  overflow: hidden;
+}
+.contentWrapper.filterActive{
+  filter: brightness(60%);
+}
+
+//Exceptions
