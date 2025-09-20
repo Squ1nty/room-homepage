@@ -22,7 +22,8 @@ $grey-500: hsl(0, 0%, 63%);
 $grey-800: hsl(0, 0%, 27%);
 $black: hsl(0, 0%, 0%);
 
-$fs-1: 1rem;
+$fs-1m: min(4.25vw, 1rem);
+$fs-1d: min(1.25rem, 1.5vw);
 $fs-2: 1.5rem;
 $fs-3: 2rem;
 
@@ -46,12 +47,9 @@ $m-3: 4em;
 }
 
 //Blocks
-body{
-  position: relative;
-  overflow: hidden;
-}
-.contentWrapper.filterActive{
-  filter: brightness(60%);
+main{
+  min-height: 100svh;
+  min-height: 100vh;
 }
 
 //Exceptions

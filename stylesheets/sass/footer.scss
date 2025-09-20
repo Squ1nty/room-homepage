@@ -1,8 +1,6 @@
-@use 'main';
-
 .attribution {
-  font-size: main.$fs-1;
-  padding: main.$p-1;
+  font-size: max(1rem, 1vw);
+  padding: max(1rem, 1vw);
   text-align: center;
 }
 .attribution a {

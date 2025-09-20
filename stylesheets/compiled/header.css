@@ -19,13 +19,9 @@ img {
   cursor: pointer;
 }
 
-body {
-  position: relative;
-  overflow: hidden;
-}
-
-.contentWrapper.filterActive {
-  filter: brightness(60%);
+main {
+  min-height: 100svh;
+  min-height: 100vh;
 }
 
 header {
@@ -34,11 +30,12 @@ header {
   left: 0;
   right: 0;
   max-height: 500px;
-  background-color: red;
+  background-color: transparent;
   width: 100%;
   display: grid;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 header.mobileHeader {
@@ -62,7 +59,7 @@ nav.mobileNav {
   align-items: center;
   gap: min(8vw, 2.5rem);
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease;
   background-color: white;
 }
 

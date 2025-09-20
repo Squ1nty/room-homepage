@@ -7,7 +7,7 @@ let allNavLi = document.querySelectorAll("li");
 let lastNavLi = allNavLi[allNavLi.length - 1];
 
 function mobileNavFocusTrap(){
-
+  
 }
 lastNavLi.addEventListener("keydown", (e) => {
   if(e.key === "Tab" && window.innerWidth <= 1024){

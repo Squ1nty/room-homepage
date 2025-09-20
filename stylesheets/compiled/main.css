@@ -19,13 +19,9 @@ img {
   cursor: pointer;
 }
 
-body {
-  position: relative;
-  overflow: hidden;
-}
-
-.contentWrapper.filterActive {
-  filter: brightness(60%);
+main {
+  min-height: 100svh;
+  min-height: 100vh;
 }
 
 /*# sourceMappingURL=main.css.map */
