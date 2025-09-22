@@ -24,8 +24,13 @@ $black: hsl(0, 0%, 0%);
 
 $fs-1m: min(4.25vw, 1rem);
 $fs-1d: min(1.25rem, 1.5vw);
-$fs-2: 1.5rem;
-$fs-3: 2rem;
+$fs-1: 1rem;
+$fs-3: max(2.25rem, 10vw);
+
+$ls-1: 1.25vw;
+$ls-1-5: 1.5vw;
+$ls-2: 2.5vw;
+$ls-3: 3vw;
 
 $fw-500: 500;
 $fw-600: 600;
@@ -36,10 +41,16 @@ $p-2: 2.25em;
 $p-3: 3em;
 
 $m-1: 1em;
+$m-1-5: 1.5em;
+$m-1-75: 1.75em;
 $m-2: min(8vw, 2.5rem);
+$m-2-5: min(12vw, 3rem);
 $m-3: 4em;
 
 // Compositions
+.flow > *+*{
+  margin-top: $m-1;
+}
 
 // Utilities
 .c-pointer{
@@ -50,6 +61,34 @@ $m-3: 4em;
 main{
   min-height: 100svh;
   min-height: 100vh;
+}
+.main__aboutRoomSection, 
+.main__heroTextSection{
+  margin: $m-2-5 $m-1-75;
+}
+main, h1, h2{
+  font-size: $fs-1;
+  color: $black;
+}
+main p:not(.heroTextSection__shopBtn p){
+  color: $grey-500;
+  line-height: $m-1-5;
+}
+h1{
+  font-size: $fs-3;
+  font-weight: $fw-600;
+}
+h2{
+  font-weight: 700;
+  letter-spacing: $ls-1-5;
+}
+.heroTextSection__shopBtn{
+  font-weight: $fw-500;
+  letter-spacing: $ls-3;
+  padding: $m-1 0;
+
+  display: flex;
+  gap: $m-1-5;
 }
 
 //Exceptions
