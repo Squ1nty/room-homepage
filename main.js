@@ -6,9 +6,19 @@ let contentWrapper = document.querySelector(".body__contentWrapper");
 let allNavLi = document.querySelectorAll("li");
 let lastNavLi = allNavLi[allNavLi.length - 1];
 
-function mobileNavFocusTrap(){
-  
+let heroImg = document.querySelector(".main__heroImg");
+
+// Dynamically changes which images are displayed (Mobile vs. Desktop)
+function handleImageType(){
+  if(window.innerWidth <= 425){
+    heroImg.setAttribute("src", "./images/mobile-image-hero-1.jpg");
+  }
+  else{
+    heroImg.setAttribute("src", "./images/desktop-image-hero-1.jpg");
+  }
 }
+
+// Focus trap for mobileNav
 lastNavLi.addEventListener("keydown", (e) => {
   if(e.key === "Tab" && window.innerWidth <= 1024){
     e.preventDefault();
@@ -21,6 +31,7 @@ function handleNavActive(){
   hamburgerIcon.setAttribute("inert", true);
   contentWrapper.classList.add("filterActive");
   closingIcon.focus();
+  nav.removeAttribute("inert");
 }
 // Event listeners for hamburgerIcon
 hamburgerIcon.addEventListener("click", () => {
@@ -38,6 +49,7 @@ function handleNavInactive(){
   hamburgerIcon.removeAttribute("inert");
   contentWrapper.classList.remove("filterActive");
   hamburgerIcon.focus();
+  nav.setAttribute("inert", true);
 }
 // Event listeners for hamburgerIcon
 closingIcon.addEventListener("click", () => {
@@ -52,6 +64,7 @@ closingIcon.addEventListener("keydown", (e) => {
 
 // Applies default states (if any) upon window resize or upon load incl. eventListeners
 function setDefaultStates(){
+  handleImageType();
   if(window.innerWidth <= 1024){
     // Show hamburgerIcon
     hamburgerIcon.style.display = "block";
@@ -66,6 +79,7 @@ function setDefaultStates(){
 
     nav.classList.remove("desktopNav");
     nav.classList.add("mobileNav");
+    nav.setAttribute("inert", true);
   }
   else{
     // Hide hamburgerIcon
@@ -84,6 +98,7 @@ function setDefaultStates(){
 
     nav.classList.remove("mobileNav");
     nav.classList.add("desktopNav");
+    nav.removeAttribute("inert");
   }
 }
 window.addEventListener("load", (e) => {
