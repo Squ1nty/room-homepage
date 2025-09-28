@@ -29,11 +29,6 @@ main {
   min-height: 100vh;
 }
 
-.main__aboutRoomSection,
-.main__heroTextSection {
-  margin: min(12vw, 3rem) 1.75em;
-}
-
 main, h1, h2 {
   font-size: 1rem;
   color: hsl(0, 0%, 0%);
@@ -45,13 +40,13 @@ main p:not(.heroTextSection__shopBtn p) {
 }
 
 h1 {
-  font-size: min(2.25rem, 9.75vw);
+  font-size: min(2.75rem, 9.75vw);
   font-weight: 600;
 }
 
 h2 {
   font-weight: 700;
-  letter-spacing: min(1.5vw, 0.85rem);
+  letter-spacing: min(1.5vw, 0.5rem);
 }
 
 .heroTextSection__shopBtn {
@@ -68,10 +63,20 @@ h2 {
   height: fit-content;
 }
 
+@media (max-width: 767px) {
+  .main__aboutRoomSection,
+  .main__heroTextSection {
+    margin: min(12vw, 3.35rem) 1.75em;
+  }
+}
 @media (min-width: 768px) and (max-width: 1439px) {
   main {
     display: flex;
     flex-direction: column;
+  }
+  .main__aboutRoomSection,
+  .main__heroTextSection {
+    margin: min(12vw, 3.35rem) 1.75em;
   }
   .main__aboutRoomWrapper {
     width: 100%;
@@ -102,6 +107,15 @@ h2 {
   main {
     display: flex;
     flex-direction: column;
+  }
+  .main__aboutRoomSection {
+    margin: min(12vw, 3.35rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main__heroTextSection {
+    margin: min(5.5vw, 8rem);
   }
   .main__heroWrapper {
     display: grid;
@@ -199,7 +213,7 @@ header.desktopHeader .header__logoIcon {
 }
 
 .desktopHeader .header__logoIconContainer {
-  margin: 0 4em;
+  margin: 0 min(5.5vw, 8rem);
 }
 
 nav.desktopNav li {
