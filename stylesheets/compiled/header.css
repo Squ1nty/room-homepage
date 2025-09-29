@@ -51,7 +51,7 @@ h2 {
 
 .heroTextSection__shopBtn {
   font-weight: 500;
-  letter-spacing: min(3vw, 1.25rem);
+  letter-spacing: min(3vw, 0.75rem);
   margin: 2em 0 1em 0;
   width: fit-content;
   display: flex;
@@ -115,7 +115,7 @@ h2 {
     justify-content: center;
   }
   .main__heroTextSection {
-    margin: min(5.5vw, 8rem);
+    margin: min(5.5vw, 7.5rem);
   }
   .main__heroWrapper {
     display: grid;
@@ -213,7 +213,7 @@ header.desktopHeader .header__logoIcon {
 }
 
 .desktopHeader .header__logoIconContainer {
-  margin: 0 min(5.5vw, 8rem);
+  margin: 0 min(5.5vw, 7.5rem);
 }
 
 nav.desktopNav li {
