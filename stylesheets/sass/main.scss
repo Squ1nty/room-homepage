@@ -57,15 +57,15 @@ $m-3: min(5.5vw, 7.5rem);
 .c-pointer{
   cursor: pointer;
 }
+.base-fs-black{
+  font-size: $fs-1;
+  color: $black; 
+}
 
 //Blocks
 main{
   min-height: 100svh;
   min-height: 100vh;
-}
-main, h1, h2{
-  font-size: $fs-1;
-  color: $black;
 }
 main p:not(.heroTextSection__shopBtn p){
   color: $grey-500;
@@ -91,6 +91,27 @@ h2{
 .main__heroWrapper, .main__aboutRoomWrapper{
   width: 100%;
   height: fit-content;
+}
+.main__heroImgSection, .main__heroTextSection{
+  position: relative;
+}
+.main__imgSlider{
+  position: absolute;
+  bottom: 0;
+
+  background-color: $black;
+  display: flex;
+}
+.main__imgSlider.mobile{
+  right: 0;
+}
+.main__imgSlider.desktop{
+  left: 0;
+}
+.imgSlider__arrowContainer{
+  width: 15px;
+  height: 20px;
+  margin: $m-1-5;
 }
 
 //Exceptions

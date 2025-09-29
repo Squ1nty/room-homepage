@@ -24,14 +24,14 @@ img {
   cursor: pointer;
 }
 
+.base-fs-black {
+  font-size: 1rem;
+  color: hsl(0, 0%, 0%);
+}
+
 main {
   min-height: 100svh;
   min-height: 100vh;
-}
-
-main, h1, h2 {
-  font-size: 1rem;
-  color: hsl(0, 0%, 0%);
 }
 
 main p:not(.heroTextSection__shopBtn p) {
@@ -61,6 +61,31 @@ h2 {
 .main__heroWrapper, .main__aboutRoomWrapper {
   width: 100%;
   height: fit-content;
+}
+
+.main__heroImgSection, .main__heroTextSection {
+  position: relative;
+}
+
+.main__imgSlider {
+  position: absolute;
+  bottom: 0;
+  background-color: hsl(0, 0%, 0%);
+  display: flex;
+}
+
+.main__imgSlider.mobile {
+  right: 0;
+}
+
+.main__imgSlider.desktop {
+  left: 0;
+}
+
+.imgSlider__arrowContainer {
+  width: 15px;
+  height: 20px;
+  margin: 1.5em;
 }
 
 @media (max-width: 767px) {

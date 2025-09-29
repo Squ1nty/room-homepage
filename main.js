@@ -5,8 +5,10 @@ let nav = document.querySelector("nav");
 let contentWrapper = document.querySelector(".body__contentWrapper");
 let allNavLi = document.querySelectorAll("li");
 let lastNavLi = allNavLi[allNavLi.length - 1];
-
 let heroImg = document.querySelector(".main__heroImg");
+let heroTextContainer = document.querySelector(".main__heroTextSection");
+let heroImgContainer = document.querySelector(".main__heroImgSection");
+let imgSlider = document.querySelector(".main__imgSlider");
 
 // Dynamically changes which images are displayed (Mobile vs. Desktop)
 function handleImageType(){
@@ -62,9 +64,21 @@ closingIcon.addEventListener("keydown", (e) => {
   }
 });
 
+function handleImageSlider(){
+  if(window.innerWidth < 1440){
+    imgSlider.classList.remove("desktop");
+    imgSlider.classList.add("mobile");
+  }
+  else{
+    imgSlider.classList.remove("mobile");
+    imgSlider.classList.add("desktop");
+  }
+}
+
 // Applies default states (if any) upon window resize or upon load incl. eventListeners
 function setDefaultStates(){
   handleImageType();
+  handleImageSlider();
   if(window.innerWidth <= 1024){
     // Show hamburgerIcon
     hamburgerIcon.style.display = "block";
