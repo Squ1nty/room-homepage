@@ -8,7 +8,7 @@ let lastNavLi = allNavLi[allNavLi.length - 1];
 let heroImg = document.querySelector(".main__heroImg");
 let heroTextContainer = document.querySelector(".main__heroTextSection");
 let heroImgContainer = document.querySelector(".main__heroImgSection");
-let imgSlider = document.querySelector(".main__imgSlider");
+let imgSliders = document.querySelectorAll(".main__imgSlider");
 
 // Dynamically changes which images are displayed (Mobile vs. Desktop)
 function handleImageType(){
@@ -66,12 +66,16 @@ closingIcon.addEventListener("keydown", (e) => {
 
 function handleImageSlider(){
   if(window.innerWidth < 1440){
-    imgSlider.classList.remove("desktop");
-    imgSlider.classList.add("mobile");
+    imgSliders[1].setAttribute("inert", true);
+    imgSliders[1].style.display = "none";
+    imgSliders[0].removeAttribute("inert");
+    imgSliders[0].style.display = "flex";
   }
   else{
-    imgSlider.classList.remove("mobile");
-    imgSlider.classList.add("desktop");
+    imgSliders[0].setAttribute("inert", true);
+    imgSliders[0].style.display = "none";
+    imgSliders[1].removeAttribute("inert");
+    imgSliders[1].style.display = "flex";
   }
 }
 

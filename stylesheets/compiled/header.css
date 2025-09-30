@@ -13,7 +13,7 @@ img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .flow > * + * {
@@ -74,18 +74,20 @@ h2 {
   display: flex;
 }
 
-.main__imgSlider.mobile {
+.main__mobileSlider {
   right: 0;
 }
 
-.main__imgSlider.desktop {
+.main__desktopSlider {
   left: 0;
 }
 
 .imgSlider__arrowContainer {
-  width: 15px;
-  height: 20px;
+  width: 36px;
+  height: 30px;
   margin: 1.5em;
+  display: grid;
+  place-items: center;
 }
 
 @media (max-width: 767px) {
@@ -140,7 +142,7 @@ h2 {
     justify-content: center;
   }
   .main__heroTextSection {
-    margin: min(5.5vw, 7.5rem);
+    padding: min(5.5vw, 7.5rem);
   }
   .main__heroWrapper {
     display: grid;
