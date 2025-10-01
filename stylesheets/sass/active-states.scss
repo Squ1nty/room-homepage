@@ -28,3 +28,19 @@ nav.desktopNav li:hover:before{
   z-index: 1;
   filter: brightness(60%);
 }
+
+// Arrow container focus state
+.imgSlider__arrowContainer:focus, 
+.imgSlider__arrowContainer:hover{
+  background-color: main.$grey-800;
+}
+
+// Shop Now button focus state
+.heroTextSection__shopBtn:focus p, 
+.heroTextSection__shopBtn:hover p{
+  color: main.$grey-500;
+}
+.heroTextSection__shopBtn:focus .shopBtn__svg, 
+.heroTextSection__shopBtn:hover .shopBtn__svg{
+  fill: main.$grey-500;
+}

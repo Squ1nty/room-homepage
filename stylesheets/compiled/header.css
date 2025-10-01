@@ -58,6 +58,16 @@ h2 {
   gap: 1.5em;
 }
 
+.heroTextSection__shopBtn p {
+  color: hsl(0, 0%, 0%);
+  transition: color 0.15s ease;
+}
+
+.shopBtn__svg {
+  fill: #000;
+  transition: fill 0.15s ease;
+}
+
 .main__heroWrapper, .main__aboutRoomWrapper {
   width: 100%;
   height: fit-content;
@@ -70,8 +80,8 @@ h2 {
 .main__imgSlider {
   position: absolute;
   bottom: 0;
-  background-color: hsl(0, 0%, 0%);
   display: flex;
+  margin-top: 0;
 }
 
 .main__mobileSlider {
@@ -83,11 +93,13 @@ h2 {
 }
 
 .imgSlider__arrowContainer {
-  width: 36px;
-  height: 30px;
-  margin: 1.5em;
+  width: max(80px, 5.75vw);
+  height: max(70px, 5.5vw);
+  background-color: hsl(0, 0%, 0%);
+  padding: 1.5em;
   display: grid;
   place-items: center;
+  transition: background-color 0.15s ease;
 }
 
 @media (max-width: 767px) {
