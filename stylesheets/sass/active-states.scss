@@ -7,6 +7,17 @@ nav.mobileNav.active{
 nav.mobileNav li:hover{
   color: main.$grey-500;
 }
+nav.desktopNav li:before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 500%);
+  height: 1px;
+  width: 0%;
+  border-bottom: 1px solid transparent;
+  transition: width 0.15s ease;
+}
 nav.desktopNav li:hover:before{
   content: "";
   position: absolute;

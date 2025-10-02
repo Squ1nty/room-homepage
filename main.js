@@ -33,23 +33,23 @@ function handleImageChange(event){
   let heroImgSrc = heroImg.getAttribute("src");
   let heroImgIndex = parseInt(heroImgSrc.slice(0, -4).charAt(heroImgSrc.length - 5));
 
-  if(event.target.classList[1] === "backArrow" && heroImgIndex != 1){
+  if(event.classList[1] === "backArrow" && heroImgIndex != 1){
     heroImgIndex -= 1;
     heroImgIndex = heroImgIndex.toString();
     heroImg.setAttribute("src", `./images/${currentScreenType}-image-hero-${heroImgIndex}.jpg`);
   }
-  else if(event.target.classList[1] === "backArrow" && heroImgIndex == 1){
+  else if(event.classList[1] === "backArrow" && heroImgIndex == 1){
     heroImgIndex = 3;
     heroImgIndex = heroImgIndex.toString();
     heroImg.setAttribute("src", `./images/${currentScreenType}-image-hero-${heroImgIndex}.jpg`);
   }
   
-  if(event.target.classList[1] === "forwardArrow" && heroImgIndex != 3){
+  if(event.classList[1] === "forwardArrow" && heroImgIndex != 3){
     heroImgIndex += 1;
     heroImgIndex = heroImgIndex.toString();
     heroImg.setAttribute("src", `./images/${currentScreenType}-image-hero-${heroImgIndex}.jpg`);
   }
-  else if(event.target.classList[1] === "forwardArrow" && heroImgIndex == 3){
+  else if(event.classList[1] === "forwardArrow" && heroImgIndex == 3){
     heroImgIndex = 1;
     heroImgIndex = heroImgIndex.toString();
     heroImg.setAttribute("src", `./images/${currentScreenType}-image-hero-${heroImgIndex}.jpg`);
@@ -59,7 +59,21 @@ function handleImageChange(event){
 // Event-Listeners for image slider (Tested: Success)
 main.addEventListener("click", (e) => {
   if(e.target.classList[0] === "imgSlider__arrowContainer"){
-    handleImageChange(e);
+    handleImageChange(e.target);
+  }
+  else if(e.target.classList[0] === "arrowSVG"){
+    handleImageChange(e.target.parentNode);
+  }
+});
+main.addEventListener("keydown", (e) => {
+  if(e.key === "Enter" || e.key === " "){
+    e.preventDefault();
+    if(e.target.classList[0] === "imgSlider__arrowContainer"){
+      handleImageChange(e.target);
+    }
+    else if(e.target.classList[0] === "arrowSVG"){
+      handleImageChange(e.target.parentNode);
+    }
   }
 });
 
@@ -72,11 +86,19 @@ lastNavLi.addEventListener("keydown", (e) => {
 });
 
 function handleNavActive(){
-  nav.classList.add("active");
-  hamburgerIcon.setAttribute("inert", true);
-  contentWrapper.classList.add("filterActive");
-  closingIcon.focus();
+  // Adds an "active" class to nav to allow for styling and adds nav back to accessibility/DOM tree
   nav.removeAttribute("inert");
+  nav.classList.add("active");
+
+  // Remove hamburgerMenuIcon from accessibility/DOM tree
+  hamburgerIcon.setAttribute("inert", true);
+
+  // Adds the grey-scale esque fitler over main/ everything else, also removes "main" from accessibility/DOM tree
+  contentWrapper.classList.add("filterActive");
+  main.setAttribute("inert", true);
+
+  // Initial focus on closing icon
+  closingIcon.focus();
 }
 // Event listeners for hamburgerIcon
 hamburgerIcon.addEventListener("click", () => {
@@ -90,11 +112,19 @@ hamburgerIcon.addEventListener("keydown", (e) => {
 });
 
 function handleNavInactive(){
+  // Removes navs active class to visually close nav and removes nav from accessibility/DOM tree
   nav.classList.remove("active");
-  hamburgerIcon.removeAttribute("inert");
-  contentWrapper.classList.remove("filterActive");
-  hamburgerIcon.focus();
   nav.setAttribute("inert", true);
+
+  // Adds hamburgerMenuIcon back to accessibility/DOM tree
+  hamburgerIcon.removeAttribute("inert");
+
+  // Reverts main/contentWrapper back to default states
+  contentWrapper.classList.remove("filterActive");
+  main.removeAttribute("inert");
+
+  // Upon closing, focuses hamburgerMenuIcon
+  hamburgerIcon.focus();
 }
 // Event listeners for hamburgerIcon
 closingIcon.addEventListener("click", () => {
