@@ -195,3 +195,9 @@ h2{
     justify-content: center;
   }
 }
+
+@media(prefers-reduced-motion: reduce){
+  *{
+    transition: none;
+  }
+}
